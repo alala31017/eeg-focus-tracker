@@ -20,7 +20,6 @@ from muse_realtime_decoder import MuseRealtimeDecoder
 
 def main():
 
-    #enter raw data file path of a recording session
     file_path = input("Enter the EEG session recording file (.bin) path:")
     events_path = input("Enter the events csv file path:")
 
@@ -65,7 +64,7 @@ def main():
     new_df = pd.concat([features_task1, features_task2], ignore_index=True)
     print(new_df.head())
     print(f"Total samples: {len(new_df)}")
-    new_df.to_csv(f"data/sessions/session{session_num}.csv")
+    new_df.to_csv(f"data/processed_by_session/session{session_num}.csv")
 
     print("Done!")
 
@@ -78,7 +77,7 @@ def load_eeg_from_bin(file_path, events_dict):
     decoder = MuseRealtimeDecoder()
     rows = []
     CHANNELS = ['TP9', 'AF7', 'AF8', 'TP10']
-    SAMPLING_RATE = 256  # Muse S default
+    SAMPLING_RATE = 256
     t0 = None
 
     for packet in stream.read_packets():
@@ -125,7 +124,7 @@ def band_pass_filter(df, lowcut=1, highcut=30, sf=256, order=4):
 
     b, a = butter(order, [low, high], btype='band')
 
-    filtered_df = pd.DataFrame()
+    filtered_df = df.copy()
 
     for ch in ['TP9', 'AF7', 'AF8', 'TP10']:
         filtered_df[ch] = filtfilt(b, a, df[ch])
@@ -133,7 +132,7 @@ def band_pass_filter(df, lowcut=1, highcut=30, sf=256, order=4):
     return filtered_df
 
 
-#create epochs
+#create windows
 def create_windows(df, window_sec=6, stride_sec=3, sf=256, threshold=380):
     window_size = window_sec * sf
     stride = stride_sec * sf
@@ -230,7 +229,7 @@ def normalize_with_baseline(features_df, baseline_ref):
         baseline_value = baseline_ref[col]
 
         if baseline_value != 0:
-            normalized_df[col] = (features_df[col] / baseline_value) / baseline_value
+            normalized_df[col] = features_df[col] / baseline_value
         else:
             normalized_df[col] = 0
 

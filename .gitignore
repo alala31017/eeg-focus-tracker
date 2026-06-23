@@ -1,0 +1,47 @@
+
+.idea/
+# ----------------------
+# Python
+# ----------------------
+__pycache__/
+*.pyc
+
+# ----------------------
+# Virtual environment
+# ----------------------
+venv/
+.env/
+
+# ----------------------
+# Data (IMPORTANT for your EEG project)
+# ----------------------
+data/
+
+# ----------------------
+# Trained models
+# ----------------------
+models/
+
+# ----------------------
+# Jupyter Notebook checkpoints
+# ----------------------
+.ipynb_checkpoints/
+
+# ----------------------
+# Mac system files
+# ----------------------
+.DS_Store
+# ----------------------
+# Virtual environment (actual folder name)
+# ----------------------
+.venv/
+
+# ----------------------
+# Streamlit
+# ----------------------
+.streamlit/
+
+# ----------------------
+# Python packaging
+# ----------------------
+*.egg-info/
