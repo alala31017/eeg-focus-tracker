@@ -6,11 +6,6 @@
 __pycache__/
 *.pyc
 
-# ----------------------
-# Virtual environment
-# ----------------------
-venv/
-.env/
 
 # ----------------------
 # Data (IMPORTANT for your EEG project)
@@ -20,7 +15,11 @@ venv/
 # ----------------------
 # Trained models
 # ----------------------
-models/
+models/*
+!models/.gitkeep
+!models/focus_model.pkl
+!models/scaler.pkl
+!models/feature_names.pkl
 
 # ----------------------
 # Jupyter Notebook checkpoints
@@ -39,7 +38,8 @@ models/
 # ----------------------
 # Streamlit
 # ----------------------
-.streamlit/
+.streamlit/*
+!.streamlit/config.toml
 
 # ----------------------
 # Python packaging
