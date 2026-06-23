@@ -15,7 +15,7 @@ venv/
 # ----------------------
 # Data (IMPORTANT for your EEG project)
 # ----------------------
-data/
+/data/
 
 # ----------------------
 # Trained models
