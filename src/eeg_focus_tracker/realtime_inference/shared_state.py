@@ -1,7 +1,8 @@
 import json
 import os
+import tempfile
 
-STATE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "state.json")
+STATE_FILE = os.path.join(tempfile.gettempdir(), "eeg_focus_tracker_state.json")
 
 _defaults = {
     "focus_value": 0.0,
@@ -17,6 +18,7 @@ _defaults = {
     "session_active": True,
     "device_connected": False, 
     "demo_finished": False, 
+    "prediction_started": False,  
 }
 
 def _read():
