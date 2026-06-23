@@ -1,3 +1,4 @@
+amused
 streamlit
 numpy
 pandas
