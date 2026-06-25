@@ -175,6 +175,7 @@ streamlit run app/streamlit-app.py
 ### `03_modeling.ipynb` — モデリング
  
 Random Forest、LightGBM、SVMの3モデルを、K-Fold CVとLeave-One-Session-Out（LOSO）CVの両方で比較しています。LOSOを主要な評価指標として採用し、クリーンデータセットを用いたLightGBMを最終モデルとして選定しています。
+
 ---
  
 ## モデル
