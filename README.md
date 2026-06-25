@@ -1,3 +1,4 @@
+
 # Personal Focus Tracker with Muse S Athena
  
 [English README is available here](./README.en.md)
@@ -5,6 +6,8 @@
 Muse S Athenaヘッドセットからリアルタイムで脳波(EEG)データを取得し、学習済みのLightGBMモデルで集中状態を判定して、日英バイリンガル対応のStreamlitダッシュボードに表示する個人開発プロジェクトです。事前に記録したセッションを再生する「デモモード」も搭載しており、実機を持っていなくてもアプリの動作を確認できます。
  
 **公開デモ:** [https://muse-eeg-focus-tracker.streamlit.app/](#) 
+
+<img width="1000" height="515" alt="neurofocus_dashboard (1)" src="https://github.com/user-attachments/assets/7423de8a-7bd4-4f15-a05c-bb0ac6f0731e" />
  
 ---
  
